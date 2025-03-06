@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Invoice Generator</h1>
+
+    <nav>
+        <button onclick="showSection('add-customer')">Add Customer</button>
+        <button onclick="showSection('show-customer')">Show Customer</button>
+        <button onclick="showSection('generate-invoice')">Generate Invoice</button>
+        <button onclick="showSection('show-invoice')">Show Invoice</button>
+        <button onclick="showSection('add-product')">Add Product</button>
+        <button onclick="showSection('manage-product')">Manage Product</button>
+    </nav>
+
+    <section id="add-customer" class="hidden">
+        <h2>Add Customer</h2>
+        <form id="add-customer-form">
+            <label for="customer-name">Name:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <label for="customer-id">Customer ID:</label>
+            <input type="text" id="customer-id" name="customer-id" required>
+            <label for="vehicle-no">Vehicle No:</label>
+            <input type="text" id="vehicle-no" name="vehicle-no" required>
+            <button type="submit">Add Customer</button>
+            
+        </form>
+    </section>
+
+    <section id="show-customer" class="hidden">
+        <h2>Show Customer</h2>
+        <div id="customer-list"></div>
+    </section>
+
+    <section id="generate-invoice" class="hidden">
+        <h2>Generate Invoice</h2>
+        <form id="generate-invoice-form">
+            <label for="customer">Customer:</label>
+            <select id="customer" name="customer" required></select>
+            <label for="product">Product:</label>
+            <select id="product" name="product" required></select>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <label for="cost">Cost:</label>
+            <input type="number" id="cost" name="cost" step="0.01" required>
+            <button type="submit">Generate Invoice</button>
+        </form>
+    </section>
+    
+
+    <section id="show-invoice" class="hidden">
+        <h2>Show Invoice</h2>
+        <div id="invoices-list"></div>
+    </section>
+
+    <section id="add-product" class="hidden">
+        <h2>Add Product</h2>
+        <form id="add-product-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name" required>
+            <label for="product-id">Product ID:</label>
+            <input type="text" id="product-id" name="product-id" required>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <button type="submit">Add Product</button>
+        </form>
+    </section>
+
+    <section id="manage-product" class="hidden">
+        <h2>Manage Product</h2>
+        <div id="product-list"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
